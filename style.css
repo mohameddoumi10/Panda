@@ -36,15 +36,88 @@ a {
   color: inherit;        
 }
 .hero {
+    position: relative;
     background-image: url("panda-hero.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 900px;
+
+    height: 100vh;
     padding-top: 70px;
+
+    display: flex;
+    align-items: center;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8) 30%,
+        rgba(0, 0, 0, 0.3) 60%,
+        transparent 100%
+    );
+}
+.hero-content {
+    position: relative;
+    color: white;
+
+    max-width: 600px;
+    margin-left: 60px;
+}
+.tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+
+    background: rgba(159, 191, 105, 0.2);
+    border: 1px solid rgba(159, 191, 105, 0.5);
+
+    font-size: 12px;
+}
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin: 10px 0;
 }
 
+.hero h1 span {
+    color: #9fbf69;
+    font-style: italic;
+}
 
+.hero p {
+    color: #ccc;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.primary {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+.secondary {
+    padding: 12px 20px;
+    border-radius: 25px;
+
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
 .nav-bar {
     display: flex;
     align-items: center;
@@ -100,7 +173,7 @@ a {
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap');
 /* LAYOUT */
 .container {
-    padding: 120px 0;
+    height: 100vh;
     background: #f3f4f2;
     display: flex;
     gap: 60px;
